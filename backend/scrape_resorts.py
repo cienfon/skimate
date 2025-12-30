@@ -44,33 +44,32 @@ WEATHER_PROMPT = """
 You are an expert data extractor.
 Extract ski resort weather conditions from the following HTML content.
 
-The content MUST ALMOST CERTAINLY contain weather for these 3 specific areas:
-1. "West Mt." (or similar like "West Mountain")
-2. "East Mt." (or similar)
-3. "Mt. Isola" (or similar)
+The content may contain weather for detailed areas (e.g. "Summit", "Base") or just general resort weather.
+Extract data for ALL distinct areas found.
 
-Extract data for ALL distinct areas found. Do not stop after the first one.
-Look for headers or sections that separate these areas.
+CRITICAL RULES:
+1. **DO NOT GUESS OR HALLUCINATE DATA.** If a value (like wind speed or visibility) is not present in the text, leave it as 0 or null/empty string as appropriate (or make a reasonable inference ONLY if highly obvious, otherwise skip).
+2. If the page contains NO weather data at all, return an empty array [].
+3. Look for "Snow Depth", "Base", or "Total Snowfall" for the total_snowfall field.
 
 HTML Content:
 {html}
 
 Output must be a valid JSON array of objects with these keys:
-- name: String (The location name, e.g. "West Mt", "East Mt", "Isola")
+- name: String (The location name, e.g. "Summit", "Base", "West Mt")
 - temperature: Number (Celsius. If range, take average or lower bound. If in F, convert.)
 - condition: String (Short description, e.g. "Snow", "Cloudy")
 - wind_speed: Number (km/h. If m/s, multiply by 3.6)
 - wind_direction: String (e.g. "NW")
 - visibility: Number (km. If unable to find, estimate 10.0 for clear, 0.5 for snow)
 - wind_chill: Number (Celsius. If not found, use temperature)
-- total_snowfall: Number (cm. Look for "Snow Depth", "Total Snowfall", or "Base". Return 0 if not found)
+- total_snowfall: Number (cm. Return 0 if not found)
 - summary: String (One sentence summary)
 
 Example:
 [
-  {{"name": "West Mt.", "temperature": -5, "condition": "Cloudy", ...}},
-  {{"name": "East Mt.", "temperature": -8, "condition": "Snow", ...}},
-  {{"name": "Mt. Isola", "temperature": -10, "condition": "Blizzard", ...}}
+  {{"name": "Summit", "temperature": -5, "condition": "Cloudy", "total_snowfall": 150, ...}},
+  {{"name": "Base", "temperature": -2, "condition": "Snow", "total_snowfall": 120, ...}}
 ]
 
 Return ONLY the raw JSON. No markdown formatting.
