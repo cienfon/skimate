@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-30T06:44:26Z",
+  "last_updated": "2025-12-30T07:29:52Z",
   "resorts": [
     {
       "id": "44444444-4444-4444-4444-444444444444",
@@ -25,7 +25,7 @@
         },
         {
           "name": "\u30a6\u30a8\u30b9\u30c8\u30bf\u30a4\u30ac\u30fc\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:00 \uff5e 16:00",
           "type": "Chairlift"
         },
@@ -37,25 +37,25 @@
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u30b4\u30f3\u30c9\u30e92\u53f7\u7dda",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:00 \uff5e 15:45",
           "type": "Gondola"
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u30af\u30ef\u30c3\u30c9",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:00 \uff5e 15:45",
           "type": "Chairlift"
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u7b2c1\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:00 \uff5e 15:45",
           "type": "Chairlift"
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u7b2c2\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:15 \uff5e 16:00",
           "type": "Chairlift"
         },
@@ -79,7 +79,7 @@
         },
         {
           "name": "\u30a2\u30af\u30ed\u30b9\u7b2c2\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:10 \uff5e 16:00",
           "type": "Chairlift"
         },
@@ -103,7 +103,7 @@
         },
         {
           "name": "\u30a4\u30be\u30e9\u7b2c4\u8d85\u9ad8\u901f\u30af\u30ef\u30c3\u30c9",
-          "status": "Open",
+          "status": "Closed",
           "operation_time": "09:30 \uff5e 15:15",
           "type": "Chairlift"
         },
@@ -120,10 +120,30 @@
           "temperature": -1,
           "condition": "Cloudy",
           "wind_speed": 0,
-          "wind_direction": "",
-          "visibility": 10.0,
+          "wind_direction": "N/A",
+          "visibility": 5.0,
           "wind_chill": -1,
-          "summary": "Cloudy conditions with a 45cm dry snow base. Slopes are open (Skiable)."
+          "summary": "Cloudy conditions with a temperature of -1\u2103. Current snow depth is 45cm of dry snow, and the slopes are skiable."
+        },
+        {
+          "name": "East Mt.",
+          "temperature": -2,
+          "condition": "Cloudy",
+          "wind_speed": 0,
+          "wind_direction": "N/A",
+          "visibility": 5.0,
+          "wind_chill": -2,
+          "summary": "Cloudy conditions with a temperature of -2\u2103. Current snow depth is 45cm of dry snow, and the slopes are skiable."
+        },
+        {
+          "name": "Mt. Isola",
+          "temperature": -4,
+          "condition": "Cloudy",
+          "wind_speed": 0,
+          "wind_direction": "N/A",
+          "visibility": 5.0,
+          "wind_chill": -4,
+          "summary": "Cloudy conditions with a temperature of -4\u2103. Current snow depth is 100cm of dry snow, and the slopes are skiable."
         }
       ]
     }
