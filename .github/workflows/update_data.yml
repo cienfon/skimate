@@ -1,0 +1,39 @@
+name: Update Ski Data
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Every 30 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        working-directory: ./backend
+        run: pip install -r requirements.txt
+
+      - name: Scrape Data
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python backend/scrape_resorts.py
+
+      - name: Commit and Push
+        run: |
+          git config user.name "SkiMate Bot"
+          git config user.email "bot@skimate.app"
+          git add docs/api/resort_data.json
+          git commit -m "Update ski resort data" || exit 0
+          git push
