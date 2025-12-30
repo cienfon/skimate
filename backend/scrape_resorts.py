@@ -1,8 +1,8 @@
 import os
 import json
-import requests
-import google.generativeai as genai
 import time
+import google.generativeai as genai
+from playwright.sync_api import sync_playwright
 
 # Configuration
 OUTPUT_FILE = "docs/api/resort_data.json"
@@ -15,7 +15,6 @@ RESORTS = [
         "lift_url": "https://rusutsu.com/lift-and-trail-status/",
         "weather_url": "https://rusutsu.com/snow-and-weather-report/"
     }
-    # Add others here as needed
 ]
 
 # AI Prompts
@@ -73,19 +72,29 @@ def setup_ai():
         print("Error: GEMINI_API_KEY env var not set")
         exit(1)
     genai.configure(api_key=api_key)
-    return genai.GenerativeModel("gemini-1.5-flash")
+    return genai.GenerativeModel("gemini-1.5-pro") # Switch to Pro for better reasoning
 
-def fetch_html(url):
-    print(f"Fetching {url}...")
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    }
+def fetch_html_with_browser(url):
+    print(f"Fetching {url } with Playwright...")
     try:
-        resp = requests.get(url, headers=headers, timeout=10)
-        resp.raise_for_status()
-        return resp.text
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            # Set a real user agent
+            page.set_extra_http_headers({
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            })
+            page.goto(url, wait_until="networkidle", timeout=60000)
+            
+            # Wait for meaningful content (e.g. a table or specific class)
+            # This is a generic wait, we can improve if we know the selector
+            time.sleep(5) 
+            
+            content = page.content()
+            browser.close()
+            return content
     except Exception as e:
-        print(f"Failed to fetch {url}: {e}")
+        print(f"Playwright fetch failed for {url}: {e}")
         return None
 
 def clean_json(text):
@@ -111,34 +120,41 @@ def main():
         
         # 1. Process Lifts
         if resort.get("lift_url"):
-            html = fetch_html(resort["lift_url"])
+            html = fetch_html_with_browser(resort["lift_url"])
             if html:
                 try:
-                    prompt = LIFT_PROMPT.format(html=html[:30000]) # Truncate to avoid token limits if massive
+                    # Truncate to avoid token limits, but 100k is usually fine for Gemini 1.5 Pro
+                    prompt = LIFT_PROMPT.format(html=html[:100000]) 
                     resp = model.generate_content(prompt)
                     if resp.text:
                         json_str = clean_json(resp.text)
-                        resort_data["lifts"] = json.loads(json_str)
-                        print(f"  - Extracted {len(resort_data['lifts'])} lifts")
+                        try:
+                            resort_data["lifts"] = json.loads(json_str)
+                            print(f"  - Extracted {len(resort_data['lifts'])} lifts")
+                        except json.JSONDecodeError:
+                            print(f"  - Failed to decode Lift JSON: {json_str[:100]}...")
                 except Exception as e:
                     print(f"  - Lift parsing failed: {e}")
         
         # 2. Process Weather
         if resort.get("weather_url"):
-            html = fetch_html(resort["weather_url"])
+            # Weather page might be simpler, but use browser to be safe
+            html = fetch_html_with_browser(resort["weather_url"])
             if html:
                 try:
-                    prompt = WEATHER_PROMPT.format(html=html[:30000])
+                    prompt = WEATHER_PROMPT.format(html=html[:100000])
                     resp = model.generate_content(prompt)
                     if resp.text:
                         json_str = clean_json(resp.text)
-                        resort_data["weather"] = json.loads(json_str)
-                        print(f"  - Extracted {len(resort_data['weather'])} weather stations")
+                        try:
+                            resort_data["weather"] = json.loads(json_str)
+                            print(f"  - Extracted {len(resort_data['weather'])} weather stations")
+                        except json.JSONDecodeError:
+                            print(f"  - Failed to decode Weather JSON: {json_str[:100]}...")
                 except Exception as e:
-                    print(f"  - Weather parsing failed: {e}")
+                     print(f"  - Weather parsing failed: {e}")
                     
         results["resorts"].append(resort_data)
-        time.sleep(2) # be nice to APIs
         
     # Write Output
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
