@@ -44,14 +44,19 @@ WEATHER_PROMPT = """
 You are an expert data extractor.
 Extract ski resort weather conditions from the following HTML content.
 
-The content may contain weather for multiple areas (e.g. "Base", "Summit", "West Mt", "East Mt").
-Extract data for EACH distinct area found.
+The content MUST ALMOST CERTAINLY contain weather for these 3 specific areas:
+1. "West Mt." (or similar like "West Mountain")
+2. "East Mt." (or similar)
+3. "Mt. Isola" (or similar)
+
+Extract data for ALL distinct areas found. Do not stop after the first one.
+Look for headers or sections that separate these areas.
 
 HTML Content:
 {html}
 
 Output must be a valid JSON array of objects with these keys:
-- name: String (The location name, e.g. "West Mt Summit")
+- name: String (The location name, e.g. "West Mt", "East Mt", "Isola")
 - temperature: Number (Celsius. If range, take average or lower bound. If in F, convert.)
 - condition: String (Short description, e.g. "Snow", "Cloudy")
 - wind_speed: Number (km/h. If m/s, multiply by 3.6)
@@ -61,7 +66,11 @@ Output must be a valid JSON array of objects with these keys:
 - summary: String (One sentence summary)
 
 Example:
-[{{"name": "Summit", "temperature": -8.5, "condition": "Snow", "wind_speed": 45, "wind_direction": "NW", "visibility": 0.2, "wind_chill": -15, "summary": "Blizzard conditions."}}]
+[
+  {{"name": "West Mt.", "temperature": -5, "condition": "Cloudy", ...}},
+  {{"name": "East Mt.", "temperature": -8, "condition": "Snow", ...}},
+  {{"name": "Mt. Isola", "temperature": -10, "condition": "Blizzard", ...}}
+]
 
 Return ONLY the raw JSON. No markdown formatting.
 """
@@ -72,7 +81,7 @@ def setup_ai():
         print("Error: GEMINI_API_KEY env var not set")
         exit(1)
     genai.configure(api_key=api_key)
-    return genai.GenerativeModel("gemini-flash-latest") # Flash is more reliable for free tier automation
+    return genai.GenerativeModel("gemini-1.5-flash") # Flash is more reliable for free tier automation
 
 def fetch_html_with_browser(url):
     print(f"Fetching {url } with Playwright...")
@@ -86,8 +95,12 @@ def fetch_html_with_browser(url):
             })
             page.goto(url, wait_until="networkidle", timeout=60000)
             
-            # Wait for meaningful content (e.g. a table or specific class)
-            # This is a generic wait, we can improve if we know the selector
+            # Scroll to bottom to trigger lazy loading
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            time.sleep(2)
+            page.evaluate("window.scrollTo(0, 0)") # Scroll back up just in case
+            
+            # Wait for specific element if possible, otherwise generic sleep
             time.sleep(5) 
             
             content = page.content()
