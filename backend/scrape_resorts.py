@@ -72,7 +72,7 @@ def setup_ai():
         print("Error: GEMINI_API_KEY env var not set")
         exit(1)
     genai.configure(api_key=api_key)
-    return genai.GenerativeModel("gemini-1.5-flash") # Flash is more reliable for free tier automation
+    return genai.GenerativeModel("gemini-flash-latest") # Flash is more reliable for free tier automation
 
 def fetch_html_with_browser(url):
     print(f"Fetching {url } with Playwright...")
