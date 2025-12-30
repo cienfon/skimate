@@ -63,6 +63,7 @@ Output must be a valid JSON array of objects with these keys:
 - wind_direction: String (e.g. "NW")
 - visibility: Number (km. If unable to find, estimate 10.0 for clear, 0.5 for snow)
 - wind_chill: Number (Celsius. If not found, use temperature)
+- total_snowfall: Number (cm. Look for "Snow Depth", "Total Snowfall", or "Base". Return 0 if not found)
 - summary: String (One sentence summary)
 
 Example:
