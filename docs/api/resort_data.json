@@ -1,152 +1,152 @@
 {
-  "last_updated": "2025-12-31T01:27:51Z",
+  "last_updated": "2026-01-01T01:45:42Z",
   "resorts": [
     {
       "id": "44444444-4444-4444-4444-444444444444",
       "name": "Rusutsu Resort",
       "lifts": [
         {
-          "name": "Yotei Gondola",
+          "name": "\u7f8a\u8e44\u30b4\u30f3\u30c9\u30e9",
           "status": "Closed",
-          "operation_time": "--:-- - --:--",
+          "operation_time": "Unknown",
           "type": "Gondola"
         },
         {
-          "name": "West #1 Quad",
+          "name": "\u30a6\u30a8\u30b9\u30c8\u7b2c1\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:00 - 19:45",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "West #2 Quad",
+          "name": "\u30a6\u30a8\u30b9\u30c8\u7b2c2\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:00 - 19:45",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "West Tiger Pair Lift",
+          "name": "\u30a6\u30a8\u30b9\u30c8\u30bf\u30a4\u30ac\u30fc\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Open",
-          "operation_time": "09:00 - 16:00",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         },
         {
-          "name": "East Gondola Line 1",
+          "name": "\u30a4\u30fc\u30b9\u30c8\u30b4\u30f3\u30c9\u30e91\u53f7\u7dda",
           "status": "Open",
-          "operation_time": "08:50 - 16:30",
+          "operation_time": "Unknown",
           "type": "Gondola"
         },
         {
-          "name": "East Gondola Line 2",
+          "name": "\u30a4\u30fc\u30b9\u30c8\u30b4\u30f3\u30c9\u30e92\u53f7\u7dda",
           "status": "Open",
-          "operation_time": "09:00 - 15:45",
+          "operation_time": "Unknown",
           "type": "Gondola"
         },
         {
-          "name": "East Quad",
+          "name": "\u30a4\u30fc\u30b9\u30c8\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:00 - 15:45",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "East #1 Pair Lift",
+          "name": "\u30a4\u30fc\u30b9\u30c8\u7b2c1\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Open",
-          "operation_time": "09:00 - 15:45",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         },
         {
-          "name": "East #2 Pair Lift",
+          "name": "\u30a4\u30fc\u30b9\u30c8\u7b2c2\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Open",
-          "operation_time": "09:15 - 16:00",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         },
         {
-          "name": "Tower Pair Lift",
+          "name": "\u30bf\u30ef\u30fc\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Open",
-          "operation_time": "08:50 - 16:30",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         },
         {
-          "name": "Isola Gondola",
+          "name": "\u30a4\u30be\u30e9\u30b4\u30f3\u30c9\u30e9",
           "status": "Open",
-          "operation_time": "09:15 - 15:30",
+          "operation_time": "Unknown",
           "type": "Gondola"
         },
         {
-          "name": "Across #1 Pair Lift",
+          "name": "\u30a2\u30af\u30ed\u30b9\u7b2c1\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Closed",
-          "operation_time": "--:-- - --:--",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         },
         {
-          "name": "Across #2 Pair Lift",
+          "name": "\u30a2\u30af\u30ed\u30b9\u7b2c2\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Open",
-          "operation_time": "09:10 - 16:00",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         },
         {
-          "name": "Isola #1 Quad",
+          "name": "\u30a4\u30be\u30e9\u7b2c1\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:25 - 15:30",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "Isola #2 Quad",
+          "name": "\u30a4\u30be\u30e9\u7b2c2\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:10 - 15:30",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "Isola #3 Quad",
+          "name": "\u30a4\u30be\u30e9\u7b2c3\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:10 - 15:30",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "Isola #4 Super Quad",
+          "name": "\u30a4\u30be\u30e9\u7b2c4\u8d85\u9ad8\u901f\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "09:10 - 15:30",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Quad)"
         },
         {
-          "name": "Isola #5 Pair Lift",
+          "name": "\u30a4\u30be\u30e9\u7b2c5\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Closed",
-          "operation_time": "--:-- - --:--",
-          "type": "Chairlift"
+          "operation_time": "Unknown",
+          "type": "Chairlift (Pair Lift)"
         }
       ],
       "weather": [
         {
           "name": "West Mt.",
-          "temperature": -8,
-          "condition": "Snow",
+          "temperature": -12,
+          "condition": "Cloudy, occasionally sunny",
           "wind_speed": 0,
           "wind_direction": "",
-          "visibility": 0.5,
-          "wind_chill": -8,
-          "total_snowfall": 285,
-          "summary": "Snow conditions are Dry snow and the slopes are currently skiable. Base depth is 50cm."
+          "visibility": 0,
+          "wind_chill": -12,
+          "total_snowfall": 295,
+          "summary": "Current temperature is -12\u00b0C. Snow depth is 60cm, with 10cm of fresh powder snow reported."
         },
         {
           "name": "East Mt.",
-          "temperature": -9,
-          "condition": "Snow",
+          "temperature": -13,
+          "condition": "Cloudy, occasionally sunny",
           "wind_speed": 0,
           "wind_direction": "",
-          "visibility": 0.5,
-          "wind_chill": -9,
-          "total_snowfall": 295,
-          "summary": "Snow conditions are Dry snow and the slopes are currently skiable. Base depth is 50cm."
+          "visibility": 0,
+          "wind_chill": -13,
+          "total_snowfall": 305,
+          "summary": "Current temperature is -13\u00b0C. Snow depth is 60cm, with 10cm of fresh powder snow reported."
         },
         {
           "name": "Mt. Isola",
-          "temperature": -12,
-          "condition": "Snow",
+          "temperature": -16,
+          "condition": "Cloudy, occasionally sunny",
           "wind_speed": 0,
           "wind_direction": "",
-          "visibility": 0.5,
-          "wind_chill": -12,
-          "total_snowfall": 415,
-          "summary": "Snow conditions are Dry snow and the slopes are currently skiable. Base depth is 100cm."
+          "visibility": 0,
+          "wind_chill": -16,
+          "total_snowfall": 430,
+          "summary": "Current temperature is -16\u00b0C. Snow depth is 120cm, with 15cm of fresh powder snow reported."
         }
       ]
     }
