@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-01T01:45:42Z",
+  "last_updated": "2026-01-02T01:28:35Z",
   "resorts": [
     {
       "id": "44444444-4444-4444-4444-444444444444",
@@ -8,145 +8,79 @@
         {
           "name": "\u7f8a\u8e44\u30b4\u30f3\u30c9\u30e9",
           "status": "Closed",
-          "operation_time": "Unknown",
+          "operation_time": "--:-- \uff5e --:--",
           "type": "Gondola"
         },
         {
           "name": "\u30a6\u30a8\u30b9\u30c8\u7b2c1\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
+          "operation_time": "09:00 \uff5e 19:45",
+          "type": "Quad Chairlift"
         },
         {
           "name": "\u30a6\u30a8\u30b9\u30c8\u7b2c2\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
+          "operation_time": "09:00 \uff5e 19:45",
+          "type": "Quad Chairlift"
         },
         {
           "name": "\u30a6\u30a8\u30b9\u30c8\u30bf\u30a4\u30ac\u30fc\u30da\u30a2\u30ea\u30d5\u30c8",
           "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
+          "operation_time": "09:00 \uff5e 16:00",
+          "type": "Pair Chairlift"
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u30b4\u30f3\u30c9\u30e91\u53f7\u7dda",
           "status": "Open",
-          "operation_time": "Unknown",
+          "operation_time": "08:50 \uff5e 16:30",
           "type": "Gondola"
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u30b4\u30f3\u30c9\u30e92\u53f7\u7dda",
           "status": "Open",
-          "operation_time": "Unknown",
+          "operation_time": "09:00 \uff5e 15:45",
           "type": "Gondola"
         },
         {
           "name": "\u30a4\u30fc\u30b9\u30c8\u30af\u30ef\u30c3\u30c9",
           "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
-        },
-        {
-          "name": "\u30a4\u30fc\u30b9\u30c8\u7b2c1\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
-        },
-        {
-          "name": "\u30a4\u30fc\u30b9\u30c8\u7b2c2\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
-        },
-        {
-          "name": "\u30bf\u30ef\u30fc\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
-        },
-        {
-          "name": "\u30a4\u30be\u30e9\u30b4\u30f3\u30c9\u30e9",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Gondola"
-        },
-        {
-          "name": "\u30a2\u30af\u30ed\u30b9\u7b2c1\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Closed",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
-        },
-        {
-          "name": "\u30a2\u30af\u30ed\u30b9\u7b2c2\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
-        },
-        {
-          "name": "\u30a4\u30be\u30e9\u7b2c1\u30af\u30ef\u30c3\u30c9",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
-        },
-        {
-          "name": "\u30a4\u30be\u30e9\u7b2c2\u30af\u30ef\u30c3\u30c9",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
-        },
-        {
-          "name": "\u30a4\u30be\u30e9\u7b2c3\u30af\u30ef\u30c3\u30c9",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
-        },
-        {
-          "name": "\u30a4\u30be\u30e9\u7b2c4\u8d85\u9ad8\u901f\u30af\u30ef\u30c3\u30c9",
-          "status": "Open",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Quad)"
-        },
-        {
-          "name": "\u30a4\u30be\u30e9\u7b2c5\u30da\u30a2\u30ea\u30d5\u30c8",
-          "status": "Closed",
-          "operation_time": "Unknown",
-          "type": "Chairlift (Pair Lift)"
+          "operation_time": "09:00 \uff5e 15:45",
+          "type": "Quad Chairlift"
         }
       ],
       "weather": [
         {
           "name": "West Mt.",
-          "temperature": -12,
-          "condition": "Cloudy, occasionally sunny",
+          "temperature": -6,
+          "condition": "Cloudy occasionally snow",
           "wind_speed": 0,
           "wind_direction": "",
-          "visibility": 0,
-          "wind_chill": -12,
-          "total_snowfall": 295,
-          "summary": "Current temperature is -12\u00b0C. Snow depth is 60cm, with 10cm of fresh powder snow reported."
+          "visibility": 0.5,
+          "wind_chill": -6,
+          "total_snowfall": 315,
+          "summary": "Cloudy occasionally snow with a temperature of -6\u00b0C. Total season snowfall is 315cm."
         },
         {
           "name": "East Mt.",
-          "temperature": -13,
-          "condition": "Cloudy, occasionally sunny",
+          "temperature": -6,
+          "condition": "Cloudy occasionally snow",
           "wind_speed": 0,
           "wind_direction": "",
-          "visibility": 0,
-          "wind_chill": -13,
-          "total_snowfall": 305,
-          "summary": "Current temperature is -13\u00b0C. Snow depth is 60cm, with 10cm of fresh powder snow reported."
+          "visibility": 0.5,
+          "wind_chill": -6,
+          "total_snowfall": 325,
+          "summary": "Cloudy occasionally snow with a temperature of -6\u00b0C. Total season snowfall is 325cm."
         },
         {
           "name": "Mt. Isola",
-          "temperature": -16,
-          "condition": "Cloudy, occasionally sunny",
+          "temperature": -10,
+          "condition": "Cloudy occasionally snow",
           "wind_speed": 0,
           "wind_direction": "",
-          "visibility": 0,
-          "wind_chill": -16,
-          "total_snowfall": 430,
-          "summary": "Current temperature is -16\u00b0C. Snow depth is 120cm, with 15cm of fresh powder snow reported."
+          "visibility": 0.5,
+          "wind_chill": -10,
+          "total_snowfall": 450,
+          "summary": "Cloudy occasionally snow with a temperature of -10\u00b0C. Total season snowfall is 450cm."
         }
       ]
     }
